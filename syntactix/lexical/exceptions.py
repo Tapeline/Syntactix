@@ -19,6 +19,8 @@ class LexerError(Exception):
 
 @dataclass
 class LexerConsumeFailedError(LexerError):
+    """Raised when consumption failed."""
+
     pos: TokenPos
     count: int = 1
 
@@ -32,13 +34,15 @@ class LexerConsumeFailedError(LexerError):
 
 @dataclass
 class LexerRequireFailedError(LexerError):
+    """Raised when require of some string failed."""
+
     pos: TokenPos
     strings: list[str]
 
     def __str__(self) -> str:
         """Text report."""
         if len(self.strings) == 1:
-            [strings] = f"'{self.strings}'"
+            strings = f"'{self.strings[0]}'"
         else:
             strings = f"one of {self.strings}"
         return (
@@ -48,6 +52,8 @@ class LexerRequireFailedError(LexerError):
 
 @dataclass
 class LexerUnexpectedCharError(LexerError):
+    """Raised when unexpected char encountered."""
+
     pos: TokenPos
     char: str
 

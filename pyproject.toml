@@ -1,0 +1,24 @@
+[project]
+name = "syntactix"
+version = "0.1.0"
+description = "Library for LL(1) parser creation"
+authors = [
+    {name = "Tapeline",email = "mail@tapeline.dev"}
+]
+license = {text = "GNU LGPL v3.0"}
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.16.1"
+ruff = "^0.12.1"
+wemake-python-styleguide = "^1.1.0"
+import-linter = "^2.3"
+

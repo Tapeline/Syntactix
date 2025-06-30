@@ -34,6 +34,8 @@ class ArithmeticLexer(LexerBase[ArithmeticToken, ArithmeticTokenType]):
 
     def scan_char(self) -> None:
         ch = self.consume()
+        if not ch:
+            self.unexpected("EOF")
         if ch in "()+-/*":
             self.add_token(ArithmeticTokenType(ch))
         elif ch.isnumeric():
