@@ -1,7 +1,7 @@
 [project]
 name = "syntactix"
 version = "0.1.0"
-description = "Library for LL(1) parser creation"
+description = "Library for LL(k) parser creation"
 authors = [
     {name = "Tapeline",email = "mail@tapeline.dev"}
 ]

@@ -11,6 +11,7 @@ from syntactix.lexical.exceptions import (
 )
 from syntactix.lexical.token import TokenLike, TokenPos
 from syntactix.sentinel import sentinel
+from syntactix.text_normalizer import normalize_crlf
 
 char = str
 
@@ -39,7 +40,7 @@ class LexerBase[  # noqa: WPS230, WPS214
         """Init lexer."""
         self.src = src
         if self.normalize_crlf_to_lf:
-            self.src = self.src.replace("\r\n", "\n").replace("\r", "\n")
+            self.src = normalize_crlf(src)
         self.i = 0
         self.line = 0
         self.line_i = 0
