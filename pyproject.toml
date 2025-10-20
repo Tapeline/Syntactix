@@ -6,7 +6,6 @@ authors = [
     {name = "Tapeline",email = "mail@tapeline.dev"}
 ]
 license = {text = "GNU LGPL v3.0"}
-readme = "README.md"
 requires-python = ">=3.13,<4.0"
 dependencies = [
 ]
