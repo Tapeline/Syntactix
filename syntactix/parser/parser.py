@@ -43,7 +43,7 @@ class ParserBase[  # noqa: WPS230, WPS214
         """Get current caret position."""
         if tok := self.peek:
             return tok.pos
-        return tok[-1].pos
+        return self.tokens[-1].pos
 
     def lookahead(self, delta: int = 0) -> Token_T | None:
         """Look n tokens ahead from peek."""
