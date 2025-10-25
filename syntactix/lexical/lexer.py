@@ -107,7 +107,7 @@ class LexerBase[  # noqa: WPS230, WPS214
 
     def consume_many(self, count: int) -> str | None:
         """Consume multiple characters or return None if too few."""
-        if self.i + count >= len(self.src):
+        if self.i + count > len(self.src):
             return None
         string = self.src[self.i:self.i + count]
         self.inc_pos(count)
