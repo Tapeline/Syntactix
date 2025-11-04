@@ -50,7 +50,7 @@ class LexerBase[  # noqa: WPS230, WPS214
 
     def error(self, error_class: type[LexerError], **kwargs: Any) -> Never:
         """Raise an error at current pos."""
-        raise error_class(pos=self.pos, **kwargs)
+        raise error_class(**({"pos": self.pos} | kwargs))
 
     def inc_pos(self, delta: int = 1) -> None:
         """Increment position."""
